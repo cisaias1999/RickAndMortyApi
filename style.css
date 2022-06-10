@@ -28,6 +28,7 @@ header h2 {
 
 .section_photo {
     position: relative;
+    width: auto;
 }
 
 span {
@@ -36,7 +37,6 @@ span {
     position: absolute;
     min-width: 50px;
     height: auto;
-    background-color: green;
     border-radius: 5px;
     z-index: 100;
     top: calc(50% - 14rem);
@@ -49,6 +49,8 @@ img {
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 15px 15px 0px 0px;
+    position: relative;
+    z-index: -1;
 }
 
 .section_info {
@@ -60,13 +62,13 @@ img {
   width: 80%;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
  
 }
-.main_section_data {
-    border: 1px solid rgb(59, 49, 49);
-    box-shadow: 1px 1px 1px 1px #686364;
+.main_section_data_character {
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 1px 4px 4px 1px #686364;
     border-radius: 15px;
     height: auto;
     width: 300px;
@@ -81,4 +83,14 @@ h3, h5{
     font-size: 1.4rem;
     margin: 5px 0 5px 5px;
     font-weight: 500;
+}
+
+.span_alive{
+    background-color: green;
+}
+.span_dead{
+    background-color: red;
+}
+.span_unknown{
+    background-color: #686364;
 }
