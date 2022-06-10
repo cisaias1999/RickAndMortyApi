@@ -35,13 +35,15 @@ span {
     color: white;
     font-size: 1.6rem;
     position: absolute;
-    min-width: 50px;
+    min-width: auto;
     height: auto;
     border-radius: 5px;
     z-index: 100;
     top: calc(50% - 14rem);
     right: calc(50% - 13rem);
-    text-align: center;
+    text-align: center;    
+    vertical-align: center;
+    padding: 5px;
 }
 
 img {
@@ -92,5 +94,5 @@ h3, h5{
     background-color: red;
 }
 .span_unknown{
-    background-color: #686364;
+    background-color: #2551df;
 }
