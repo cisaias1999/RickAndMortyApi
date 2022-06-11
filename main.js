@@ -10,14 +10,8 @@ const getCharacters = async (url) => {
     data = await resp.json();
 
     let characters = []
-
-
-    console.log(data.info)
-    console.log(data.results)
-
     data.info.prev == null ? button_prev.style.display = "none" : button_prev.style.display="inline";
     data.info.next == null ? button_next.style.display = "none" :button_next.style.display="inline";
-
 
     data.results.forEach((element) => {
 
@@ -36,7 +30,6 @@ const getCharacters = async (url) => {
 
         first_section.append(img, span)
 
-
         const second_section = document.createElement("section")
         second_section.classList.add("section_info")
         const h4 = document.createElement("h4")
@@ -53,21 +46,11 @@ const getCharacters = async (url) => {
     });
 
     data_main.append(...characters)
-
-
 }
-/*
-button_next.addEventListener("click", next =  () => {
-    getCharacters()
-})
-button_prev.addEventListener("click", prev = () => {
-    getCharacters()
-})*/
 
 getCharacters(API_URL)
 
 const render_delete = () => {
-
     let old_info = document.querySelectorAll(".main_section_data_character")
     old_info.forEach(element => {
         element.remove();
