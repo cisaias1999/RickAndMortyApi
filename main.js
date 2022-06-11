@@ -19,7 +19,7 @@ const getCharacters = async (url) => {
     data.info.next == null ? button_next.style.display = "none" :button_next.style.display="inline";
 
 
-    data.results.map((element) => {
+    data.results.forEach((element) => {
 
         const main_article = document.createElement("article")
         main_article.classList.add("main_section_data_character")
