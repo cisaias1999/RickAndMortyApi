@@ -42,7 +42,6 @@ span {
     top: calc(50% - 14rem);
     right: calc(50% - 13rem);
     text-align: center;    
-    vertical-align: center;
     padding: 5px;
 }
 
@@ -60,7 +59,7 @@ img {
     height: auto;
 
 }
-#data_main{
+.data_main{
   width: 80%;
   display: flex;
   flex-direction: row;
@@ -95,4 +94,27 @@ h3, h5{
 }
 .span_unknown{
     background-color: #2551df;
+}
+button{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+
+
+button:hover{
+    cursor: pointer;
+    background-color: #86bd88; /* Green */
+    color: white;
+}
+
+.button_section{
+    margin-bottom: 15px;
 }

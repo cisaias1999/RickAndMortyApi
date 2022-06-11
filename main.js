@@ -1,15 +1,24 @@
 const API_URL = "https://rickandmortyapi.com/api/character"
 
-const data_main = document.querySelector("#data_main")
-
+const data_main = document.querySelector(".data_main")
+let data = " "
+const button_prev = document.querySelector(".button_prev")
+const button_next = document.querySelector(".button_next")
 
 const getCharacters = async (url) => {
-
     const resp = await fetch(url)
-    const data = await resp.json();
+    data = await resp.json();
 
-    console.log(data.results)
     let characters = []
+
+
+    console.log(data.info)
+    console.log(data.results)
+
+    data.info.prev == null ? button_prev.style.display = "none" : button_prev.style.display="inline";
+    data.info.next == null ? button_next.style.display = "none" :button_next.style.display="inline";
+
+
     data.results.map((element) => {
 
         const main_article = document.createElement("article")
@@ -44,6 +53,31 @@ const getCharacters = async (url) => {
     });
 
     data_main.append(...characters)
+
+
 }
+/*
+button_next.addEventListener("click", next =  () => {
+    getCharacters()
+})
+button_prev.addEventListener("click", prev = () => {
+    getCharacters()
+})*/
 
 getCharacters(API_URL)
+
+const render_delete = () => {
+
+    let old_info = document.querySelectorAll(".main_section_data_character")
+    old_info.forEach(element => {
+        element.remove();
+    });
+}
+button_next.addEventListener("click", next = () => {
+    render_delete()
+    getCharacters(data.info.next)
+})
+button_prev.addEventListener("click", prev = () => {
+    render_delete()
+    getCharacters(data.info.prev)
+})
