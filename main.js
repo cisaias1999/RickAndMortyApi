@@ -21,7 +21,8 @@ const getCharacters = async (url) => {
         first_section.classList.add("section_photo")
         const img = document.createElement("img")
         img.src = element.image;
-
+        img.alt = "Imagen de personaje de la serie Rick And Morty"
+       
         const span = document.createElement("span")
         element.status === "Alive" ?
             span.classList.add("span_alive") : element.status === "Dead" ? span.classList.add("span_dead") : span.classList.add("span_unknown")
@@ -36,9 +37,9 @@ const getCharacters = async (url) => {
         h4.textContent = element.name
         const h3 = document.createElement("h3")
         h3.textContent = element.origin.name
-        const h5 = document.createElement("h5")
-        h5.textContent = element.species
-        second_section.append(h4, h3, h5)
+        const h2 = document.createElement("h5")
+        h2.textContent = element.species
+        second_section.append(h4, h3, h2)
 
         main_article.append(first_section, second_section)
 
